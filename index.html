@@ -6,11 +6,16 @@
   <title>Tan's Portfolio</title>
 
   <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       margin: 0;
       font-family: Arial, sans-serif;
       background: #f7f7f7;
       color: #222;
+      line-height: 1.6;
     }
 
     header {
@@ -37,6 +42,7 @@
     header p {
       font-size: 18px;
       color: #ddd;
+      margin: 6px 0;
     }
 
     nav {
@@ -46,6 +52,7 @@
       box-shadow: 0 2px 8px rgba(0,0,0,0.08);
       position: sticky;
       top: 0;
+      z-index: 1000;
     }
 
     nav a {
@@ -53,6 +60,10 @@
       text-decoration: none;
       color: #111;
       font-weight: bold;
+    }
+
+    nav a:hover {
+      color: #555;
     }
 
     section {
@@ -76,6 +87,10 @@
       border-radius: 12px;
     }
 
+    .project h3 {
+      margin-top: 0;
+    }
+
     .skills span {
       display: inline-block;
       background: #111;
@@ -94,12 +109,37 @@
       color: white;
       text-decoration: none;
       border-radius: 8px;
+      font-weight: bold;
+    }
+
+    .button:hover {
+      background: #333;
+    }
+
+    a {
+      color: #111;
     }
 
     footer {
       text-align: center;
       padding: 30px;
       color: #666;
+    }
+
+    @media (max-width: 700px) {
+      header h1 {
+        font-size: 32px;
+      }
+
+      nav a {
+        display: inline-block;
+        margin: 8px;
+      }
+
+      section {
+        margin: 25px 15px;
+        padding: 22px;
+      }
     }
   </style>
 </head>
@@ -110,11 +150,12 @@
     <img src="profile.jpg" alt="Profile photo">
     <h1>Hello, I'm Tan 👋</h1>
     <p>Electrical & Computer Engineering Student</p>
-    <p>Embedded Systems | Analog Design | PCB Design | Sensors</p>
+    <p>Analog & Mixed-Signal Design | PLL/VCO | CMOS | Sensor Interfaces</p>
   </header>
 
   <nav>
     <a href="#about">About</a>
+    <a href="#experience">Experience</a>
     <a href="#resume">Resume</a>
     <a href="#projects">Projects</a>
     <a href="#skills">Skills</a>
@@ -124,10 +165,61 @@
   <section id="about">
     <h2>About Me</h2>
     <p>
-      I am an Electrical and Computer Engineering student with interests in embedded systems,
-      analog and mixed-signal design, sensor systems, PCB design, and hardware/software integration.
-      I enjoy building real engineering projects that connect circuits, firmware, and data together.
+      I am an Electrical and Computer Engineering student interested in analog and mixed-signal
+      design, CMOS circuits, PLLs, VCOs, sensor interfaces, and hardware system design.
+      My experience so far comes mainly from academic projects, coursework, and simulation-based
+      design work, including CMOS device simulation, PLL design, and sensor signal-chain projects.
     </p>
+
+    <p>
+      I am still building my hands-on industry experience, and I am actively looking for opportunities
+      to improve my practical skills in circuit design, simulation, testing, debugging, and measurement.
+      I enjoy learning how circuit-level decisions affect real system performance such as noise,
+      stability, power, accuracy, and reliability.
+    </p>
+  </section>
+
+  <section id="experience">
+    <h2>Experience Focus</h2>
+
+    <div class="project">
+      <h3>Academic Experience in Analog & Mixed-Signal Design</h3>
+      <p>
+        Through school projects, I have gained experience with CMOS inverter operation,
+        transistor behavior, threshold voltage extraction, and device-to-circuit relationships.
+        I studied how process parameters such as doping, oxide thickness, and device structure
+        affect switching behavior, noise margin, and circuit performance.
+      </p>
+    </div>
+
+    <div class="project">
+      <h3>PLL / VCO Design Experience</h3>
+      <p>
+        I worked on a phase-locked loop design targeting a 6–12 GHz frequency range.
+        The project included a phase-frequency detector, charge pump, loop filter,
+        current-starved ring VCO, and feedback divider. I analyzed tuning range,
+        KVCO, loop stability, phase noise, jitter, and power tradeoffs.
+      </p>
+    </div>
+
+    <div class="project">
+      <h3>Sensor Interface & Mixed-Signal System Experience</h3>
+      <p>
+        I designed a sensor system using an analog-output capacitive soil moisture sensor
+        with an ESP32 ADC. This project helped me understand sensor physics, analog signal
+        conversion, ADC sampling, calibration, quantization, noise, and cross-sensitivity.
+      </p>
+    </div>
+
+    <div class="project">
+      <h3>Learning & Growth</h3>
+      <p>
+        Most of my current experience is from academic and simulation-based work, but I am
+        motivated to keep improving my hands-on skills. I want to gain more practical experience
+        with circuit measurement, lab testing, PCB debugging, layout review, and analog/mixed-signal
+        design workflows in real engineering environments.
+      </p>
+    </div>
   </section>
 
   <section id="resume">
@@ -140,53 +232,81 @@
     <h2>Projects</h2>
 
     <div class="project">
-      <h3>Embedded Sensor System</h3>
+      <h3>PLL / High-Speed Clock Generation Project</h3>
       <p>
-        Developed an embedded sensing platform using microcontrollers, ADC integration,
-        and sensor data collection.
+        Designed and analyzed a PLL architecture for high-speed clock generation.
+        The project included PFD, charge pump, loop filter, current-starved ring VCO,
+        and feedback divider design. I studied tuning range, loop bandwidth, phase margin,
+        jitter, phase noise, power, and control-voltage ripple.
       </p>
-      <p><strong>Tools:</strong> STM32, ESP32, C/C++, ADC, Sensors</p>
+      <p><strong>Tools:</strong> Cadence Virtuoso, Spectre, MATLAB-style analysis, Analog IC Design</p>
     </div>
 
     <div class="project">
-      <h3>PCB Design Project</h3>
+      <h3>CMOS Device & Inverter Simulation</h3>
       <p>
-        Designed and tested PCB layouts for hardware circuits using schematic capture,
-        layout design, and debugging tools.
+        Simulated CMOS device behavior and inverter operation, including NMOS/PMOS
+        transfer characteristics, threshold voltage extraction, doping effects, and voltage
+        transfer curve analysis. This project helped connect semiconductor process behavior
+        with circuit-level performance.
       </p>
-      <p><strong>Tools:</strong> KiCad, Altium Designer, Oscilloscope, Logic Analyzer</p>
+      <p><strong>Tools:</strong> Silvaco ATHENA/ATLAS, CMOS Design, Device Simulation</p>
     </div>
 
     <div class="project">
-      <h3>PLL / Analog Design Project</h3>
+      <h3>Capacitive Sensor Interface System</h3>
       <p>
-        Worked on CMOS inverter, ring oscillator, VCO, and PLL-related circuit simulations.
+        Built a mixed-signal sensor system using a capacitive soil moisture sensor and ESP32 ADC.
+        The project included analog voltage sensing, ADC conversion, calibration, filtering concepts,
+        and analysis of noise and cross-sensitivity.
       </p>
-      <p><strong>Tools:</strong> Cadence Virtuoso, Spectre, Analog IC Design</p>
+      <p><strong>Tools:</strong> ESP32, ADC, Sensors, Calibration, Embedded Systems</p>
+    </div>
+
+    <div class="project">
+      <h3>Communication Systems Simulation</h3>
+      <p>
+        Simulated an amplitude modulation and demodulation system to study frequency-domain
+        behavior, filtering, noise effects, and carrier synchronization. This project helped me
+        connect signal processing theory with practical system-level simulation.
+      </p>
+      <p><strong>Tools:</strong> Simulink, MATLAB, Signal Processing, Communication Systems</p>
     </div>
   </section>
 
   <section id="skills">
     <h2>Skills</h2>
     <div class="skills">
-      <span>C/C++</span>
-      <span>Python</span>
-      <span>STM32</span>
-      <span>ESP32</span>
-      <span>KiCad</span>
-      <span>Altium Designer</span>
+      <span>Analog Circuit Design</span>
+      <span>Mixed-Signal Systems</span>
+      <span>CMOS Devices</span>
+      <span>PLL Design</span>
+      <span>VCO Design</span>
+      <span>Charge Pump</span>
+      <span>Loop Filter Design</span>
+      <span>Phase Noise</span>
+      <span>Jitter Analysis</span>
       <span>Cadence Virtuoso</span>
+      <span>Spectre</span>
       <span>MATLAB</span>
+      <span>Simulink</span>
+      <span>Silvaco ATHENA/ATLAS</span>
+      <span>ADC</span>
+      <span>Sensor Interfaces</span>
       <span>PCB Debugging</span>
       <span>Oscilloscope</span>
+      <span>C/C++</span>
+      <span>Python</span>
+      <span>ESP32</span>
+      <span>STM32</span>
     </div>
   </section>
 
   <section id="contact">
     <h2>Contact</h2>
     <p>Email: your-email@example.com</p>
-    <p>GitHub: github.com/Captainbanana2543</p>
-    <p>LinkedIn: your LinkedIn link here</p>
+    <p>GitHub: <a href="https://github.com/Captainbanana2543" target="_blank">github.com/Captainbanana2543</a></p>
+    <p>LinkedIn: <a href="https://www.linkedin.com/in/your-linkedin" target="_blank">LinkedIn Profile</a></p>
   </section>
 
   <footer>
